@@ -1,0 +1,52 @@
+body {
+    background-color: #000;
+}
+p{
+    font-size: 16px;
+}
+.btn{
+    border-width: .125rem;
+}
+
+#intro{
+    background-image: url(../img/intro.jpg);
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    height: 400px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+@media (min-width: 576px) {
+    #intro {
+      height: 600px;
+    }
+}
+
+/* Divider */
+.divider {
+    background-color: #eee;
+}
+.divider h2{
+    color: #4f4f4f;
+}
+
+/* Book */
+#book{
+    background-image: url(../img/book.jpg);
+    background-repeat: no-repeat;
+    height: 300px;
+    background-size: cover;
+}
