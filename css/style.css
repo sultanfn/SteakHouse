@@ -1,5 +1,6 @@
 body {
     background-color: #000;
+    scroll-behavior: smooth;
 }
 p{
     font-size: 16px;
@@ -49,4 +50,27 @@ p{
     background-repeat: no-repeat;
     height: 300px;
     background-size: cover;
+}
+
+.star-widget input{
+    display: none;
+}
+.star-widget label{
+    font-size: 35px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+input:not(:checked)~ label:hover,
+input:not(:checked)~ label:hover ~label{
+    color: #fd4;
+}
+.input:checked ~ label{
+    columns: #fd4;
+    text-shadow: 0 0 20px #952;
 }

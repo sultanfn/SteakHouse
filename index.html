@@ -7,13 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Hello, world!</title>
+    <title>Welcome to my STEAK HOUSE</title>
   </head>
   <body>
+      
     <header id="home">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
@@ -40,6 +43,7 @@
               </div>
             </div>
         </nav>
+        
 
        <!-- Background image -->
       <div class="p-5 text-center" id="intro">
@@ -49,12 +53,16 @@
               <h1 class="mb-3">Steak House</h1>
               <h4 class="mb-3">A premium and authentic steak house</h4>
               <a
+              data-bs-toggle="modal" 
+              data-bs-target="#menu"
                 class="btn btn-outline-light btn-lg m-2"
                 href="#!"
                 role="button"
                 >See menu</a
               >
               <a
+                data-bs-toggle="modal" 
+                data-bs-target="#reservation"
                 class="btn btn-outline-light btn-lg m-2"
                 href="#!"
                 role="button"
@@ -66,7 +74,7 @@
       </div>
       <!-- Background image -->
     </header>
-    
+  
     <main>
         <section class="divider py-5">
             <div class="container-fluid">
@@ -129,9 +137,11 @@
         <!-- Book table -->
         <section id="book">
             <!-- BG Image -->
-            <div class="d-flex align-items-center justify-content-center h-100">
+            <div class="d-flex align-items-center justify-content-center h-100"> 
                 <div>
-                    <a class="btn btn-outline-light btn-lg m-2" href="#!" role="button">Book a table</a>
+                    <a data-bs-toggle="modal" 
+                    data-bs-target="#reservation" class="btn btn-outline-light btn-lg m-2" href="#!" role="button">Book a table</a>
+                    <a  data-bs-toggle="modal" data-bs-target="#review" class="btn btn-outline-light btn-lg m-2" href="#!" role="button">Leave a Review</a>
                 </div>
             </div>
         </section>
@@ -229,13 +239,13 @@
                 </div>
                 <div class="col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-5">Working hours:</h5>
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="row justify-content-center" >
+                        <div class="col-3">
                             <p>Monday-Friday</p>
                             <p>Saturday</p>
                             <p>Sunday</p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-5">
                             <p>9:00 AM - 5:00PM</p>
                             <p>12:00 AM - 11:00PM</p>
                             <p>10:00PM</p>
@@ -252,6 +262,146 @@
         </div>
     </footer>
 
+
+    <!-- Reservation Modal -->
+  <div class="modal fade" id="reservation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book a Table</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Doe">
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <!-- Phone -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder= "1112223333">
+              </div>
+              <!-- Date picker -->
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Select a Date</label>
+                <input type="date" class="form-control" id="exampleFormControlInput1">
+              </div>
+              <!-- Time picker -->
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Select a Time</label>
+                <input type="time" class="form-control" id="exampleFormControlInput1">
+              </div>
+              <!-- Message -->
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn-primary">Book a table</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Leave a Review Modal -->
+<div class="modal fade" id="review" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Leave us a review</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="star-widget d-flex justify-content-center">  
+          <div class="rating">
+            <input type="radio" name="rate" id="rate-5">
+            <label for="rate-5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-4">
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3">
+            <label for="rate-3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-2">
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1">
+            <label for="rate-1" class="fas fa-star"></label>
+          </div>                  
+        </div>
+        <div class="my-3">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe your experience...."></textarea>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Menu -->
+<div class="modal fade" id="menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mark" id="exampleModalLabel">STEAK HOUSE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="mark">Starter</h2>
+            <ul class="list-unstyled">
+              <li>Kookabura wings ....... $29</li>
+              <li>Bloom onion     ....... $29</li>
+              <li>Volcano Shrimp  ....... $29</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h2 class="mark">Steaks</h2>
+            <ul class="list-unstyled">
+              <li>Natural Cut Ribeye ......  $49</li>
+              <li>Slow Roasted rib   ....... $29</li>
+              <li>Volcano Shrimp     ....... $29</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="mark">Entress</h2>
+            <ul class="list-unstyled">
+              <li>Kookabura wings ....... $29</li>
+              <li>Bloom onion     ....... $29</li>
+              <li>Volcano Shrimp  ....... $29</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h2 class="mark">Desert</h2>
+            <ul class="list-unstyled">
+              <li>Natural Cut Ribeye .....   $49</li>
+              <li>Slow Roasted rib   ....... $29</li>
+              <li>Volcano Shrimp     ....... $29</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
